@@ -11,23 +11,18 @@
             architecto suscipit.
           </p>
           <div class="chips">
-            <v-chip color="white" class="my-2 mx-3" outlined
-              ><v-icon small class="mr-2"> mdi-phone-plus </v-icon>Hello</v-chip
+            <v-chip color="white" class="my-2 mx-2" outlined
+              >Domestic and Industrial Wiring</v-chip
             >
-            <v-chip color="white" class="my-2 mx-3" outlined
-              ><v-icon small class="mr-2"> mdi-phone-plus </v-icon>Hello</v-chip
+            <v-chip color="white" class="my-2 mx-2" outlined
+              >Security Fire Alarm Ststem</v-chip
             >
-            <v-chip color="white" class="my-2 mx-3" outlined
-              ><v-icon small class="mr-2"> mdi-phone-plus </v-icon>Hello</v-chip
-            >
-            <v-chip color="white" class="my-2 mx-3" outlined
-              ><v-icon small class="mr-2"> mdi-phone-plus </v-icon>Hello</v-chip
-            >
-            <v-chip color="white" class="my-2 mx-3" outlined
-              ><v-icon small class="mr-2"> mdi-phone-plus </v-icon>Hello</v-chip
+            <v-chip color="white" class="my-2 mx-2" outlined>CCTV</v-chip>
+            <v-chip color="white" class="my-2 mx-2" outlined
+              >Electrical Maintenance Contract</v-chip
             >
           </div>
-          <div class="buttons my-8">
+          <div class="buttons my-5">
             <v-btn
               depressed
               color="primary"
@@ -73,7 +68,7 @@
           v-for="(item, idx) in servicesCards"
           :key="idx"
         >
-          <v-card class="mx-auto my-12" max-width="374">
+          <v-card class="mx-auto my-5" max-width="374">
             <v-img
               height="200"
               :src="require(`../assets/Home/service/${item.image}`)"
@@ -133,9 +128,16 @@
         </div>
       </div>
     </v-container>
-    <v-container fluid class="my-15 px-15">
+    <v-container fluid class="my-15 px-15" id="contact">
       <v-layout row wrap justify-center>
-        <v-flex xs12 sm6 md6 lg6 xl6 column justify-center>
+        <v-flex xs12 sm6 md6 lg6 xl6 column justify-center align-self-center>
+          <v-img
+            width="100%"
+            src="../assets/Home/contact.svg"
+            class="mx-auto"
+          ></v-img>
+        </v-flex>
+        <v-flex xs12 sm6 md6 lg6 xl6 column justify-center class="pa-10">
           <h1>Contact Us</h1>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam
@@ -152,16 +154,14 @@
             <b> {{ whatsappNo }}</b> </span
           ><br />
           Email :
-          <span class="text-capitalize"
+          <span class=""
             ><b>{{ email }} </b>
           </span>
+          <br />
+          Address : {{ address }}
           <p class="mt-10 green--text">
             <b> We are avalalable for Monday to Saterday 10am to 8pm </b>
           </p>
-        </v-flex>
-
-        <v-flex xs12 sm6 md6 lg6 xl6 column justify-center align-self-center>
-          <ContactForm />
         </v-flex>
       </v-layout>
     </v-container>
@@ -169,13 +169,13 @@
 </template>
 
 <script>
-import ContactForm from "../components/ContactForm.vue";
 export default {
   data: () => ({
     selectedItem: 0,
     phoneNo: process.env.VUE_APP_PHONE_NO,
     whatsappNo: process.env.VUE_APP_WHATSAPP_NO,
     email: process.env.VUE_APP_EMAIL_ID,
+    address: process.env.VUE_APP_ADDRESS,
     items: [
       { text: "My Files", icon: "mdi-folder" },
       { text: "Shared with me", icon: "mdi-account-multiple" },
@@ -188,8 +188,8 @@ export default {
 
     servicesCards: [
       {
-        name: "Service Name",
-        subtitle: "Hello",
+        name: "Domestic and Industrial Wiring",
+        subtitle: " All kind of Wiring ",
         image: "s3.jpg",
         description:
           "Small plates, salads & sandwiches - an intimate setting with 12 indoor seats plus patio seating.",
@@ -197,7 +197,7 @@ export default {
         ordernowLink: "/order-now?serviceName=Service Name",
       },
       {
-        name: "Service Name",
+        name: "Security Fire Alarm Ststem",
         subtitle: "Hello",
         image: "s1.jpg",
         description:
@@ -206,7 +206,16 @@ export default {
         ordernowLink: "/order-now",
       },
       {
-        name: "Service Name",
+        name: "CCTV",
+        subtitle: "Hello",
+        image: "s2.jpg",
+        description:
+          "Small plates, salads & sandwiches - an intimate setting with 12 indoor seats plus patio seating.",
+
+        ordernowLink: "/order-now",
+      },
+      {
+        name: "Electrical Maintenance Contract",
         subtitle: "Hello",
         image: "s2.jpg",
         description:
@@ -216,9 +225,7 @@ export default {
       },
     ],
   }),
-  components: {
-    ContactForm,
-  },
+  components: {},
 };
 </script>
 

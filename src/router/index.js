@@ -16,9 +16,19 @@ const routes = [
     component: () => import("../views/About.vue"),
   },
   {
+    path: "/gallary",
+    name: "Gallary",
+    component: () => import("../views/Gallary.vue"),
+  },
+  {
     path: "/order-now",
     name: "OrderNow",
     component: () => import("../views/OrderNow.vue"),
+  },
+  {
+    path: "/thank-you",
+    name: "Thankyou",
+    component: () => import("../views/Thankyou.vue"),
   },
   { path: "*", redirect: "/error" },
 ];
