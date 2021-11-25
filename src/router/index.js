@@ -30,6 +30,11 @@ const routes = [
     name: "Thankyou",
     component: () => import("../views/Thankyou.vue"),
   },
+  {
+    path: "/privacy-policy",
+    name: "Privacy",
+    component: () => import("../views/PrivacyPolicy.vue"),
+  },
   { path: "*", redirect: "/error" },
 ];
 

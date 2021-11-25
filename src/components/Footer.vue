@@ -1,8 +1,8 @@
 <template>
-  <v-container class="px-15 primary" fluid>
-    <v-layout row wrap justify-center class="pt-5 pb-2">
-      <v-flex xs12 sm6 md4 lg4 xl4 column align-self-center>
-        <v-img width="50" src="../assets/logo.svg"></v-img>
+  <v-container class="px-md-15 primary" fluid>
+    <v-layout row wrap justify-center class="pt-5 pb-2 px-4">
+      <v-flex xs12 sm6 md4 lg4 xl4 column align-self-center class="text-center">
+        <v-img width="80%" src="../assets/logo/logo.png"></v-img>
       </v-flex>
       <v-flex xs12 sm6 md4 lg4 xl4 column align-self-center class="text-center">
         <p class="white--text">
@@ -24,7 +24,14 @@
           </v-icon>
         </v-btn>
         <div>
-          &#169; {{ new Date().getFullYear() }} — <strong>Power Stricke</strong>
+          &#169; {{ new Date().getFullYear() }} —
+          <strong>Power Stricke</strong>
+          <router-link
+            to="/privacy-policy"
+            class="white--text text-decoration-none"
+          >
+            - Privacy Policy
+          </router-link>
         </div>
       </v-flex>
     </v-layout>

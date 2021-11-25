@@ -2,23 +2,26 @@
   <div class="">
     <v-app-bar app color="primary" dark>
       <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
-
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
+        <router-link to="/">
+          <v-img
+            alt="Vuetify Logo"
+            class="shrink mr-2 hidden-sm-and-down"
+            contain
+            src="../assets/logo/logo.png"
+            transition="scale-transition"
+            width="300"
+          />
+        </router-link>
+        <router-link to="/">
+          <v-img
+            alt="Power Strike"
+            class="shrink mt-1 hidden-sm-and-up"
+            contain
+            src="../assets/logo/logo.png"
+            transition="scale-transition"
+            width="140"
+          />
+        </router-link>
       </div>
 
       <v-spacer></v-spacer>
@@ -31,7 +34,8 @@
           class="mx-1 text-capitalize py-5"
           dark
           text
-          to="/gallary"
+          href="https://www.facebook.com/powerstrikeelectricianservce/photos/?ref=page_internal"
+          link
         >
           <span class="mx-1">Gallery</span>
         </v-btn>
@@ -65,9 +69,8 @@
     </v-app-bar>
     <v-navigation-drawer v-model="drawer" fixed temporary class="py-5">
       <v-img
-        src="../assets/logo.svg"
-        width="100"
-        style="width: 80px"
+        src="../assets/logo/icon.png"
+        style="width: 50px"
         class="mx-auto my-2"
       >
       </v-img>
@@ -75,18 +78,43 @@
       <v-divider></v-divider>
 
       <v-list dense>
-        <v-list-item
-          v-for="item in items"
-          :key="item.title"
-          link
-          :to="item.link"
-        >
+        <v-list-item link to="/">
           <v-list-item-icon>
-            <v-icon>{{ item.icon }}</v-icon>
+            <v-icon>mdi-home</v-icon>
           </v-list-item-icon>
 
           <v-list-item-content>
-            <v-list-item-title>{{ item.title }}</v-list-item-title>
+            <v-list-item-title>Home</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+        <v-list-item
+          link
+          href="https://www.facebook.com/powerstrikeelectricianservce/photos/?ref=page_internal"
+        >
+          <v-list-item-icon>
+            <v-icon>mdi-image-multiple</v-icon>
+          </v-list-item-icon>
+
+          <v-list-item-content>
+            <v-list-item-title>Gallery</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+        <v-list-item link to="/#contact">
+          <v-list-item-icon>
+            <v-icon>mdi-email-outline</v-icon>
+          </v-list-item-icon>
+
+          <v-list-item-content>
+            <v-list-item-title>Contact</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+        <v-list-item link to="/about">
+          <v-list-item-icon>
+            <v-icon>mdi-information</v-icon>
+          </v-list-item-icon>
+
+          <v-list-item-content>
+            <v-list-item-title>About Us</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
       </v-list>
@@ -103,7 +131,7 @@ export default {
         {
           title: "Gallery",
           icon: "mdi-image-multiple",
-          link: "/gallary",
+          link: "https://www.facebook.com/powerstrikeelectricianservce/photos/?ref=page_internal",
         },
         { title: "Contact", icon: "mdi-email-outline", link: "/#contact" },
         { title: "About Us", icon: "mdi-information ", link: "/about" },

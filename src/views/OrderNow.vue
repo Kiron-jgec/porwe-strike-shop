@@ -1,7 +1,7 @@
 <template>
-  <v-container fluid class="px-15">
+  <v-container fluid class="px-md-15">
     <div class="text-center">
-      <h1>Place an Order</h1>
+      <h1>Book an Elctrician</h1>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores
         similique soluta magnam molestiae repellat delectus, totam quis optio
@@ -14,7 +14,17 @@
     }}</v-alert>
 
     <v-layout row wrap justify-center class="my-15">
-      <v-flex xs12 sm6 md7 lg7 xl7 column justify-center align-self-center>
+      <v-flex
+        xs12
+        sm6
+        md7
+        lg7
+        xl7
+        column
+        justify-center
+        align-self-center
+        class="hidden-sm-and-down"
+      >
         <v-img
           lazy-src="../assets/Order/OrderNow.svg"
           src="../assets/Order/OrderNow.svg"
@@ -108,7 +118,7 @@
                   :disabled="!valid"
                   @click="submit"
                   :loading="loading"
-                  >Request
+                  >Book Now
                 </v-btn>
               </v-col>
             </v-row>

@@ -1,16 +1,15 @@
 <template>
   <div class="home">
     <v-container fluid class="landingSec">
-      <div class="landingSeclayer px-15">
+      <div class="landingSeclayer px-md-15">
         <div class="landingtext text-center">
           <h1>Power strike Electrician Services</h1>
           <p class="my-3">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Soluta
-            culpa fugiat, libero quod in excepturi impedit delectus distinctio
-            corrupti aperiam eveniet earum nemo illum odio ducimus totam vero
-            architecto suscipit.
+            Domestic and industrial electrical wiring. CCTV Installation and
+            repair service. Fire alarm and security system. D2H Service
+            Electrical service providers & maintenance .
           </p>
-          <div class="chips">
+          <!-- <div class="chips">
             <v-chip color="white" class="my-2 mx-2" outlined
               >Domestic and Industrial Wiring</v-chip
             >
@@ -21,7 +20,7 @@
             <v-chip color="white" class="my-2 mx-2" outlined
               >Electrical Maintenance Contract</v-chip
             >
-          </div>
+          </div> -->
           <div class="buttons my-5">
             <v-btn
               depressed
@@ -45,7 +44,7 @@
       </div>
     </v-container>
 
-    <v-container fluid class="px-15 my-15">
+    <!-- <v-container fluid class="px-15 my-15">
       <div class="servicestext text-center">
         <h2>Our Services</h2>
         <p style="max-width: 70%; margin: auto" class="my-3">
@@ -106,8 +105,8 @@
           </v-card>
         </v-flex>
       </v-layout>
-    </v-container>
-    <v-container fluid class="my-15 filloversec">
+    </v-container> -->
+    <!-- <v-container fluid class="my-15 filloversec">
       <div class="textConatinerovelly px-15">
         <div class="constnertext text-center">
           <h1 class="warning--text">Some Valuable text will be here</h1>
@@ -127,15 +126,18 @@
           >
         </div>
       </div>
-    </v-container>
-    <v-container fluid class="my-15 px-15" id="contact">
+    </v-container> -->
+    <v-container fluid class="my-15 px-md-15" id="contact">
       <v-layout row wrap justify-center>
         <v-flex xs12 sm6 md6 lg6 xl6 column justify-center align-self-center>
-          <v-img
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1734.1388227605757!2d88.28308007188687!3d24.35932871247556!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39fbcf7baa6d6c81%3A0x29eb47d241d7bb18!2sPower%20Strike%20Electrician%20Service!5e1!3m2!1sen!2sin!4v1637728117901!5m2!1sen!2sin"
             width="100%"
-            src="../assets/Home/contact.svg"
-            class="mx-auto"
-          ></v-img>
+            height="450"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+          ></iframe>
         </v-flex>
         <v-flex xs12 sm6 md6 lg6 xl6 column justify-center class="pa-10">
           <h1>Contact Us</h1>
@@ -146,16 +148,21 @@
           </p>
           Phone No :
           <span class="text-capitalize">
-            <b> {{ phoneNo }} </b></span
+            <b>
+              <a :href="'tel:+' + phoneNo">{{ phoneNo }}</a>
+            </b></span
           >
           <br />
           Whatsapp No :
           <span class="text-capitalize">
             <b> {{ whatsappNo }}</b> </span
           ><br />
-          Email :
-          <span class=""
-            ><b>{{ email }} </b>
+
+          <span class="">
+            Email :
+            <b>
+              <a :href="'mailto:' + email"> {{ email }}</a>
+            </b>
           </span>
           <br />
           Address : {{ address }}
@@ -264,7 +271,7 @@ export default {
 }
 .landingSec p {
   font-size: 1.2rem;
-  max-width: 70%;
+  max-width: 80%;
   margin: auto;
   color: #fff;
   text-align: center;
